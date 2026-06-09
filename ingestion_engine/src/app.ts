@@ -5,6 +5,10 @@ import helmet from 'helmet';
 import cors from 'cors';
 import compression from 'compression';
 import authRoutes from './api/routes/auth.routes';
+import logRoutes from './api/routes/auth.routes';
+
+// Add this below your auth route (around line 24):
+
 // We will build these custom middlewares next:
 // import { errorHandler } from './api/middlewares/errorHandler';
 // import { requestLogger } from './api/middlewares/requestLogger';
@@ -27,6 +31,7 @@ app.get('/health', (req: Request, res: Response) => {
 });
 
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/logs', logRoutes);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error('Unhandled error:', err);

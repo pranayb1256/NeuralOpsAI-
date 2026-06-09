@@ -1,0 +1,9 @@
+{
+  "serviceId": "REPLACE_WITH_YOUR_SERVICE_ID",
+  "level": "ERROR",
+  "message": "Payment gateway timeout after 5000ms",
+  "metadata": {
+    "userId": "usr_999",
+    "ip": "192.168.1.10"
+  }
+}
