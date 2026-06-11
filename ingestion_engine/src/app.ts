@@ -6,6 +6,8 @@ import cors from 'cors';
 import compression from 'compression';
 import authRoutes from './api/routes/auth.routes';
 import logRoutes from './api/routes/auth.routes';
+import searchRoutes from './api/routes/search.routes';
+
 
 // Add this below your auth route (around line 24):
 
@@ -32,7 +34,7 @@ app.get('/health', (req: Request, res: Response) => {
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/logs', logRoutes);
-
+app.use('/api/v1/search', searchRoutes); // Add search routes
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error('Unhandled error:', err);
   const statusCode = err.statusCode || 400;
